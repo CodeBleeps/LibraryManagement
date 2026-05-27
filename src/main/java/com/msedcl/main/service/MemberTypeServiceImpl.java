@@ -1,4 +1,4 @@
-package com.msedcl.main.repository;
+package com.msedcl.main.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -6,10 +6,12 @@ import java.util.Map;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
 import com.msedcl.main.entity.MemberType;
 
-@Repository
-public class MemberTypeRepositoryImpl implements MemberTypeRepository {
+@Service
+public class MemberTypeServiceImpl implements MemberTypeService {
 	private JdbcTemplate jdbcTemplate;
 
 	private static final String SELECT_ALL_MEMBER_TYPE_SQL = "SELECT * FROM member_type";
@@ -17,7 +19,7 @@ public class MemberTypeRepositoryImpl implements MemberTypeRepository {
 	private static final Map<Integer, MemberType> MEMBER_TYPE_ID_MAP = new HashMap<>();
 	private static final Map<String, MemberType> MEMBER_TYPE_DESC_MAP = new HashMap<>();
 	
-	public MemberTypeRepositoryImpl(JdbcTemplate jdbcTemplate) {
+	public MemberTypeServiceImpl(JdbcTemplate jdbcTemplate) {
 		System.out.println("Overloaded Constructor Called - MemberTypeRepositoryImpl");
 		this.jdbcTemplate = jdbcTemplate;
 		populateMemberTypeMaps();
