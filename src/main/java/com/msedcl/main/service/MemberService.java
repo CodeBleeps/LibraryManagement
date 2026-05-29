@@ -1,10 +1,10 @@
-package com.msedcl.main.repository;
+package com.msedcl.main.service;
 
 import java.util.List;
 
 import com.msedcl.main.entity.Member;
 
-public interface MemberRepository {
+public interface MemberService {
 	Member addNewMember(Member member);
 	Member getMemberbyMemberId(int memberId);
 	List<Member> getAllMemberList();

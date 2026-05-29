@@ -8,4 +8,5 @@ public interface MemberTypeService {
 	MemberType getMemberTypeByMemberTypeId(int memberTypeId);
 	MemberType getMemberTypeByMemberTypeDesc(String memberTypeDesc);
 	List<MemberType> getMemberTypeList();
+	public void populateMemberTypeMaps();
 }
